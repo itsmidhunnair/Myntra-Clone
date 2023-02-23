@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra Lite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/body.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin-bottom: 130px;">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary navMain">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img
+              style="width: 50px"
+              src="data:image/png;base64,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"
+              alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  class="dropDown7"
+                  href="javascript:void(0)"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  men
+                </a>
+                <ul class="dropdown-menu" id="ddmenu">
+                  <div style="display: flex;flex-wrap: wrap;">
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                    <ul class="navBar-links">
+                      <li>Online Shoping</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>Kids</li>
+                      <li>Home & Living</li>
+                      <li>Beauty</li>
+                    </ul>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  class="dropDown7"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  women
+                </a>
+                <ul class="dropdown-menu" id="ddmenu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  class="dropDown7"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  kids
+                </a>
+                <ul class="dropdown-menu" id="ddmenu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  class="dropDown7"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  home & Living
+                </a>
+                <ul class="dropdown-menu" id="ddmenu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  class="dropDown7"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  beauty
+                </a>
+                <ul class="dropdown-menu" id="ddmenu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  class="dropDown7"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  studio<sup>NEW</sup>
+                </a>
+                <ul class="dropdown-menu" id="ddmenu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <!--<li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li> -->
+            </ul>
+            <form
+              class="d-flex"
+              role="search"
+              style="position: relative; left: -48px"
+            >
+              <span class="search-icon"
+                ><svg
+                  focusable="false"
+                  height="24px"
+                  viewBox="0 0 24 24"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z"
+                  ></path>
+                  <path d="M0,0h24v24H0V0z" fill="none"></path>
+                </svg>
+              </span>
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search for products, brands and more"
+                id="searchBox"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button
+                class="btn"
+                style="border: 1px solid #bfc0c6"
+                type="submit"
+              >
+                Update
+              </button>
+            </form>
+            <div class="navIcons">
+              <svg
+                class="svg-icon"
+                style="
+                  vertical-align: middle;
+                  fill: currentColor;
+                  overflow: hidden;
+                "
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M858.5 763.6c-18.9-44.8-46.1-85-80.6-119.5-34.5-34.5-74.7-61.6-119.5-80.6-0.4-0.2-0.8-0.3-1.2-0.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-0.4 0.2-0.8 0.3-1.2 0.5-44.8 18.9-85 46-119.5 80.6-34.5 34.5-61.6 74.7-80.6 119.5C146.9 807.5 137 854 136 901.8c-0.1 4.5 3.5 8.2 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c0.1 4.4 3.6 7.8 8 7.8h60c4.5 0 8.1-3.7 8-8.2-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+                />
+              </svg>
+              <svg
+                class="svg-icon"
+                style="
+                  vertical-align: middle;
+                  fill: currentColor;
+                  overflow: hidden;
+                "
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M769.28 128C672.64 128 588.16 183.04 544 263.68 500.48 183.04 415.36 128 318.08 128c-140.8 0-254.72 114.56-254.72 256 0 67.2 25.6 128 67.84 174.08l391.04 392.96C528.64 956.8 536.32 960 544 960c7.68 0 15.36-3.2 21.76-8.96l391.04-392.96C998.4 512.64 1024 451.2 1024 384 1024 242.56 910.08 128 769.28 128zM908.16 516.48 544 886.4 179.84 516.48C147.2 481.92 127.36 435.2 127.36 384c0-106.24 85.76-192 190.72-192C403.2 192 476.8 248.32 502.4 325.76 508.8 342.4 525.44 354.56 544 354.56c19.2 0 35.2-11.52 42.24-28.16l0 0C611.2 248.32 684.16 192 769.28 192c105.6 0 190.72 85.76 190.72 192C960.64 435.2 940.8 481.92 908.16 516.48z"
+                />
+              </svg>
+              <svg
+                class="svg-icon"
+                style="
+                  vertical-align: middle;
+                  fill: currentColor;
+                  overflow: hidden;
+                "
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M333.376 192c15.552-61.952 95.296-121.6 178.624-121.6 83.328 0 163.072 59.648 178.624 121.6h26.133333a170.666667 170.666667 0 0 1 169.472 150.442667l48.362667 405.333333A170.666667 170.666667 0 0 1 765.12 938.666667h-506.24a170.666667 170.666667 0 0 1-169.472-190.890667l48.341333-405.333333A170.666667 170.666667 0 0 1 307.221333 192h26.154667z m68.565333 0h220.117334C604.8 164.288 559.082667 134.4 512 134.4S419.221333 164.288 401.92 192z m-94.72 64a106.666667 106.666667 0 0 0-105.92 94.037333l-48.341333 405.333334A106.666667 106.666667 0 0 0 258.858667 874.666667h506.261333a106.666667 106.666667 0 0 0 105.92-119.296l-48.362667-405.333334A106.666667 106.666667 0 0 0 716.757333 256H307.221333z m5.12 320.789333a32 32 0 0 1 57.962667-27.178666c24.789333 52.864 80.533333 88.256 141.781333 88.256 61.205333 0 116.842667-35.392 141.653334-88.256a32 32 0 0 1 57.941333 27.178666c-35.349333 75.349333-113.578667 125.077333-199.594667 125.077334-86.058667 0-164.394667-49.749333-199.722666-125.077334z"
+                  fill="#000000"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="overLay"></div>
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner" data-bs-interval="5000">
+          <div class="carousel-item active">
+            <img
+              src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/0174e4d7-448c-4746-8572-69461ad5be101659020268081-Tops---Tees_Desk.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/6107d28b-2bcb-44e6-9743-655b54550b8f1659020199598-Workwear_Desk--1-.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/5/31/4031994d-9092-4aa7-aea1-f52f2ae5194f1654006594976-Activewear_DK.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="sidePopUp">
+        <div class="PopupHead">
+          <div style="display: inline;"> Flat ₹200 off </div>
+          <span class="rightBoxArrow" style="top: 24px; position: relative;">
+            <svg
+              class="svg-icon"
+              style="vertical-align: middle; fill: currentColor; overflow: hidden"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M830.687738 603.071182c0 9.614985-3.933589 17.949814-11.799744 25.007557-7.867178 7.05672-17.222243 10.56052-28.065196 10.512425L232.716714 638.591163c-10.789741 0-20.144806-3.5038-28.064172-10.512425-7.919367-7.009647-11.852956-15.344476-11.799744-25.007557 0.053212-9.660011 3.986801-17.996886 11.799744-25.00551l279.05253-248.641917c7.867178-7.009647 17.22122-10.513448 28.065196-10.513448 10.842952 0 20.196994 3.504824 28.064172 10.513448l279.05253 248.641917C826.754149 585.074296 830.687738 593.411171 830.687738 603.071182z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="container-fluid mx-0 px-0"
+        style="position: relative; top: 100px"
+      >
+        <div class="heading1">Deal of the Day</div>
+        <div class="img-cards">
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+        </div>
+        <div class="heading1">BEST OF MYNTRA EXCLUSIVE BRANDS</div>
+        <div class="img-cards">
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+        </div>
+        <div class="heading1">BEST OF MYNTRA EXCLUSIVE BRANDS</div>
+        <div class="img-cards">
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+          <img
+            src="https://assets.myntassets.com/w_98,c_limit,fl_progressive,dpr_2.0/assets/images/retaillabs/2023/2/20/74ecd6d4-0540-4102-abc7-4e3402c46ef01676874131877-Min.-70----Extra-20--Off.jpg"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="footerMain">
+      <div class="links">
+        <div>
+          <ul>
+            <li>Online Shoping</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>Kids</li>
+            <li>Home & Living</li>
+            <li>Beauty</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Online Shoping</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>Kids</li>
+            <li>Home & Living</li>
+            <li>Beauty</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li>Online Shoping</li>
+            <li>Men</li>
+            <li>Women</li>
+            <li>Kids</li>
+            <li>Home & Living</li>
+            <li>Beauty</li>
+          </ul>
+        </div>
+      </div>
+      <div class="experience">
+        <ul><li>EXPERIENCE MYNTRA APP ON MOBILE </li>
+        <li>
+          <img class="appDnld" style="width: 140px;margin-bottom:0" src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="">
+          <img class="appDnld" style="width: 125px;" src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="">
+        </li></ul>
+
+        <ul><li>KEEP IN TOUCH</li>
+        <li class="sm-icons">
+          <img style="margin: 0;" src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" alt="">
+          <img src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" alt="">
+          <img src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" alt="">
+          <img src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png  " alt="">
+        </li>
+      </ul>
+      </div>
+      <div class="return">
+        <div style="display: flex;">
+          <div>
+            <img src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" alt="">
+          </div>
+          <div>
+            <span class="primText">100% ORIGINAL </span><span class="secText">guarantee for all products at myntra.com </span>
+          </div>
+        </div>
+        <div style="display: flex;">
+          <div>
+            <img src="https://constant.myntassets.com/web/assets/img/ef05d6ec-950a-4d01-bbfa-e8e5af80ffe31574602902427-30days.png" alt="">
+          </div>
+          <div>
+            <span class="primText">100% ORIGINAL </span><span class="secText">guarantee for all products at myntra.com </span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+.heading1{
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    color: #3e4152;
+    letter-spacing: .15em;
+    font-size: 22.8px;
+    margin: 50px 0 10px 30px;
+    max-height: 5em;
+    font-weight: 700;
+}
+
+.sidePopUp{
+    position: fixed;
+    z-index: 100;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    width: 30px;
+    padding-top: 14px;
+    padding-left: 5px;
+    height: 200px;
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: 700;
+    right: 0;
+    background-color: #535766;
+    color: #fff;
+    bottom: 130px;
+    height: 288px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.sidePopUp .PopupHead{
+    right: 0;
+    position: absolute;
+}
+
+.img-cards{
+    position: relative;
+    display: inline;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.img-cards img{
+    max-width: 125px;
+}
